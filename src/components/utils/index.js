@@ -9,7 +9,7 @@ const formatTime = (time) =>{
 }
 const formatTime2 = (time) =>{
     if (time <= 60) {
-        return time < 10 ? `0${time}` : `${time}`;
+        return time < 10 ? `0:0${time}` : `0:${time}`;
     } else {
         return Math.floor(time / 60) + `:` + (time % 60) 
     }
