@@ -1,9 +1,95 @@
+@import 
+url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap');
 
-/*
-.App {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  min-height: 100%;
-}*/
+/* Variable */
+:root{
+    --nav-background:rgba(250, 249, 249, 0.959);
+    --nav-height: 50px;
+    --nav-link-color : #818181;
+    --nav-link-color-hover : #000000;
+}
 
+/* Reset */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+a{
+    color: unset;
+    text-decoration: none;
+}
+/* general */
+body {
+    height: 100%;
+    font-family: "Lato", sans-serif;
+    
+    background-size: cover;
+}
+
+
+
+.blog-container {
+    max-width: 600px;
+    margin: var(--nav-height) auto 0 auto;
+    padding:  1rem;
+    background:  rgb(255, 255, 255);
+}
+
+/* navBar */
+
+.navbar {
+    height: var(--nav-height);
+    position: fixed;
+    width: 100%;
+    top: -1px;
+    left: 0; right: 0;
+    box-shadow: 0px 10px 30px transparent;
+    z-index: 999;
+    transition: background 1s ease;
+}
+
+.navbar-item {
+    padding-right: 40px !important;
+    font-size: large !important;
+  }
+  
+  .navbar-item:hover {
+    background-color: white !important;
+    color: black !important;
+  }
+
+  .main-content {
+    padding-top: 2rem;
+}
+.hero {
+    background-color: transparent;
+}
+
+hr {
+    height: 0.5px;
+    background: black;
+}
+
+  .content-header {
+    padding-bottom: 10px;
+}
+
+.content-header .subtitle {
+    color: #9a9a9a;
+}
+
+  .post {
+    padding-bottom: 50px;
+    margin: 0 5px 0 5px;
+}
+
+.post a {
+    color: #000;
+}
+
+button {
+    margin-top: 10px;
+}
