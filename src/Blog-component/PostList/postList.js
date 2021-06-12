@@ -1,7 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
 
-  function postList  ({post}) {
+  function PostList  ({post}) {
 
    const renderDate = (dateString) =>{
         const nameMonths = ['January',"February", "March","April",
@@ -29,4 +29,4 @@ import {Link} from 'react-router-dom';
     
 }
 
-export default postList
+export default PostList

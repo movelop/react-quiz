@@ -1,6 +1,6 @@
 import axios from 'axios';
 import React, { useState, useEffect} from 'react';
-import PostList from '../PostList/postList';
+import PostList from '../PostList/PostList';
 
  function AllPosts () {
      const [pageNumber, setPageNumber] = useState(0);
@@ -9,7 +9,8 @@ import PostList from '../PostList/postList';
 
 
     useEffect(()=>{
-        axios.get(`http://159.65.237.77/posts?page=${pageNumber}`)
+        axios.get(`http://159.65.237.77/posts?page=${pageNumber}`
+        )
         .then(res =>res.data)
         .then(({totalPages, posts}) => {
             setPosts(posts);
