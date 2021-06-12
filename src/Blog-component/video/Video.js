@@ -14,7 +14,7 @@ import {Link} from 'react-router-dom';
 
     async getVideo () {
         const res = await axios.get(`
-        http://localhost:4000/video/videos/${this.state.videoFilename}`);
+        http://159.65.237.77:4000/video/videos/${this.state.videoFilename}`);
         this.setState({video: res.data});
         
     } 
@@ -38,8 +38,8 @@ import {Link} from 'react-router-dom';
                         <div className="column is-6">
                             <div className = "post">
                                 <div className= "content">
-                                    <video controls autoPlay>
-                                        <source src= {`http://localhost:4000/video/show/${this.state.videoFilename}`}
+                                    <video controls>
+                                        <source src= {`http://159.65.237.77/video/show/${this.state.videoFilename}`}
                                         type = {this.state.video.contentType} >
                                         </source>
                                     

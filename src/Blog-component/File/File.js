@@ -1,29 +1,34 @@
-import React, { useState, useEffect } from 'react';
+import React, { Component } from 'react';
 import axios from 'axios';
 import FileSaver from 'file-saver';
 
-  function File ()   {
-    const [pageNumber, setPageNumber] = useState(0);
-     const [files, setFiles] = useState([]);
-     const [numberOfPages, setNumberOfPage] = useState(0)
+ class File extends Component {
+     state = {
+         pageNumber: 0,
+         files: [],
+         numberOfPages: 0,
+         fileDownloading: ''
+     }
+     componentDidMount () {
+         this.getFiles();
+         
+     }
 
-     useEffect(()=>{
-        axios.get(`http://localhost:4000/file/files?page=${pageNumber}`)
-        .then(res =>res.data)
+     getFiles () {
+        axios.get(`http://159.65.237.77/file/files?page=${this.state.pageNumber}`)
+        .then(res => res.data)
         .then(({totalPages, files}) => {
-            setFiles(files);
-            setNumberOfPage(totalPages);
+            this.setState({files : files});
+            this.setState({numberOfPages : totalPages});
         })
-    }, [pageNumber])
+        
+    }
+    
 
-    const prevHandler = () => {
-        setPageNumber(Math.max(0, pageNumber-1))
-      }
-    const nextHandler = () => {
-        setPageNumber(Math.min(numberOfPages-1, pageNumber + 1));
-      }
 
-    const renderDate = (dateString) => {
+    
+
+    renderDate (dateString) {
         const nameMonths = ['January',"February", "March","April",
         "May","June","July", "August", "September", 
         "October", "November", "December"];
@@ -33,8 +38,8 @@ import FileSaver from 'file-saver';
         return `${date.getDate()}, ${nameMonths[date.getMonth()]}, ${date.getFullYear()}`
     };
 
-   const  renderList = () => {
-        return files.map(file =>{
+    renderList () {
+        return this.state.files.map(file =>{
             
             const onSubmitDownload =(e) =>{
                 e.preventDefault();
@@ -42,7 +47,7 @@ import FileSaver from 'file-saver';
         
                 axios({
                     method: "GET",
-                    url: `http://localhost:4000/file/download/${downloadFilename}`,
+                    url: `http://159.65.237.77/file/download/${downloadFilename}`,
                     responseType: "blob",
                     
                 }).then(response => {
@@ -61,7 +66,7 @@ import FileSaver from 'file-saver';
                  <div className= "content" key={file.filename}>
                             <div className= "content-header" >
                             <h3 className= "title is-3"><b>{file.filename}</b></h3>
-                            <h6 className = "subtitle is-6">{renderDate(file.uploadDate)}</h6>
+                            <h6 className = "subtitle is-6">{this.renderDate(file.uploadDate)}</h6>
                             <button className="button is-dark is-medium" onClick={((e) => onSubmitDownload(e))}>
 							    Download
 						    </button>
@@ -76,7 +81,15 @@ import FileSaver from 'file-saver';
         })
     }
 
+    render() {
+      const   {pageNumber} = this.state
+        const prevHandler = () => {
+            this.setState({ pageNumber : Math.max(0, pageNumber -1)})
+        }
     
+        const nextHandler = () => {
+            this.setState({pageNumber: Math.min(this.state.numberOfPages-1, pageNumber + 1)})
+        }
         return (
             <div>
             <div className="header-title">
@@ -94,7 +107,7 @@ import FileSaver from 'file-saver';
                     <div className="columns is-centered is-multiline has-text-centered">
                         <div className="column is-6">
                             <div className = "post">
-                                {renderList()}
+                                {this.renderList()}
                             </div>
                         </div>
                     </div>
@@ -108,7 +121,7 @@ import FileSaver from 'file-saver';
             </div>
         </div>
         )
-    
+    }
 }
 
 export default File

@@ -9,7 +9,7 @@ import PostList from '../PostList/postList';
 
 
     useEffect(()=>{
-        axios.get(`http://localhost:4000/posts?page=${pageNumber}`)
+        axios.get(`http://159.65.237.77/posts?page=${pageNumber}`)
         .then(res =>res.data)
         .then(({totalPages, posts}) => {
             setPosts(posts);

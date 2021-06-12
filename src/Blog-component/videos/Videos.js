@@ -8,7 +8,7 @@ import VideoList from '../VideoList/VideoList';
         const [numberOfPages, setNumberOfPage] = useState(0);
 
         useEffect(() => {
-            axios.get(`http://localhost:4000/video/videos?page=${pageNumber}`)
+            axios.get(`http://159.65.237.77/video/videos?page=${pageNumber}`)
         .then(res =>res.data)
         .then(({totalPages, files}) => {
             setVideos(files);

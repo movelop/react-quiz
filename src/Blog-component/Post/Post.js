@@ -14,7 +14,7 @@ import {Link} from 'react-router-dom';
 
     async getPost () {
         const res = await axios.get(`
-        http://localhost:4000/posts/${this.props.match.params.id}`);
+        http://159.65.237.77/posts/${this.props.match.params.id}`);
         this.setState({post: res.data});
         
     }
