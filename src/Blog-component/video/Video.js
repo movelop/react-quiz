@@ -14,7 +14,7 @@ import {Link} from 'react-router-dom';
 
     async getVideo () {
         const res = await axios.get(`
-        http://159.65.237.77:4000/video/videos/${this.state.videoFilename}`);
+        http://159.65.237.77/video/videos/${this.state.videoFilename}`);
         this.setState({video: res.data});
         
     } 
