@@ -19,7 +19,7 @@ import {Link} from 'react-router-dom';
         return (
             <div className= "content">
                             <div className= "content-header" >
-                            <h3 className= "title is-3"><b><Link to= {`/videos/${video.filename}`}>{video.filename}</Link></b></h3>
+                            <h3 className= "title is-4"><b><Link to= {`/videos/${video.filename}`}>{video.filename}</Link></b></h3>
                             
                             <h6 className = "subtitle is-6">{renderDate(video.uploadDate)}</h6>
                             <hr/>

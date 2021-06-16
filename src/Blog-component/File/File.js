@@ -65,7 +65,7 @@ import FileSaver from 'file-saver';
                 
                  <div className= "content" key={file.filename}>
                             <div className= "content-header" >
-                            <h3 className= "title is-3"><b>{file.filename}</b></h3>
+                            <h3 className= "title is-4"><b>{file.filename}</b></h3>
                             <h6 className = "subtitle is-6">{this.renderDate(file.uploadDate)}</h6>
                             <button className="button is-dark is-medium" onClick={((e) => onSubmitDownload(e))}>
 							    Download

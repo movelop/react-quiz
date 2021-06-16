@@ -25,13 +25,16 @@ import banner from './img/favicon.png';
               <img src={banner} alt= "logo" />
               <span className= "title">The Tijani Disciple</span>
             </Link>
-            <button className="button navbar-burger" onClick={this.toggleNav}>
-              <span></span>
-              <span></span>
-              <span></span>
+            <button className=" button burger navbar-burger" onClick={this.toggleNav}
+            aria-label='menu'
+            aria-expanded='false'
+            data-target='navbarBasicExample'>
+              <span aria-hidden='true'></span>
+              <span aria-hidden='true'></span>
+              <span aria-hidden='true'></span>
             </button>
           </div>
-          <div className={ this.state.isActive ? 'navbar-menu is-active' : 'navbar-menu'}>
+          <div id="navbarBasicExample" className={ this.state.isActive ? 'navbar-menu is-active' : 'navbar-menu'}>
             <div className="navbar-start">
               
             </div>

@@ -156,7 +156,7 @@ import right from './img/right-direction.svg';
         </div>
       </div>
     </section>
-          <div></div>
+          
     <section className="section ">
       <div className="container">
         <div className="has-text-centered" id="services-text-container">
@@ -175,13 +175,12 @@ import right from './img/right-direction.svg';
                 </div>
                 <h3 className="title is-3 has-text-centered" id="card-product-description">Articles</h3>
                 <p className="has-text-centered">
-                  There are many variations of passages of Lorem Ipsum available, but the majority
-                  have suffered alteration in some form, by injected humour, or randomised words
-                  which don't look even slightly believable.
+                  Articles on the deen and world in gerneral are shared here,
+                  the goal is to know more about our religion and make ourselves better muslims
                 </p>
                 <div  className ="has-text-centered">
-                    <Link to = "/posts" >
-                    check out <span>
+                    <Link to = "/posts">
+                    <span className="subtitle">check out</span> <span>
                     <img src = {right} alt= "" width="10px" height = "10px"/>
                     </span>
                     </Link>
@@ -197,13 +196,12 @@ import right from './img/right-direction.svg';
                 </div>
                 <h3 className="title is-3 has-text-centered" id="card-product-description">Documents</h3>
                 <p className="has-text-centered">
-                  There are many variations of passages of Lorem Ipsum available, but the majority
-                  have suffered alteration in some form, by injected humour, or randomised words
-                  which don't look even slightly believable.
+                  Here we share documents on teachings of the deen and also share the latest 
+                  documents and guide of our community.
                 </p>
                 <div  className ="has-text-centered">
                     <Link to = "/file" >
-                    check out <span>
+                    <span className="subtitle">check out</span> <span>
                     <img src = {right} alt= "" width="10px" height = "10px"/>
                     </span>
                     </Link>
@@ -219,13 +217,12 @@ import right from './img/right-direction.svg';
                 </div>
                 <h3 className="title is-3 has-text-centered" id="card-product-description">Quiz</h3>
                 <p className="has-text-centered">
-                  There are many variations of passages of Lorem Ipsum available, but the majority
-                  have suffered alteration in some form, by injected humour, or randomised words
-                  which don't look even slightly believable.
+                  Take a quiz today and improve your knowledge of the deen and know more
+                  about our great umah
                 </p>
                 <div  className ="has-text-centered">
                     <Link to = "/quiz" >
-                    check out <span>
+                    <span className="subtitle">check out</span> <span>
                     <img src = {right} alt= "" width="10px" height = "10px"/>
                     </span>
                     </Link>

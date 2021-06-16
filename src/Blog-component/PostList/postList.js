@@ -17,9 +17,9 @@ import {Link} from 'react-router-dom';
         return (
             <div className= "content">
                 <div className= "content-header" >
-                    <h3 className= "title is-3"><b><Link to= {`/posts/${post._id}`}>{post.title}</Link></b></h3>
-                    <h4 className = "title is-4 is-spaced">{post.description}</h4>
-                    <h6 className = "subtitle is-6">{renderDate(post.createdAt)}</h6>
+                    <p className= "title is-4 "><b><Link className="has-text-black-bis" to= {`/posts/${post._id}`}>{post.title}</Link></b></p>
+                    <p className = "title is-6 is-spaced">{post.description}</p>
+                    <p className = "subtitle is-6">{renderDate(post.createdAt)}</p>
                     <hr/>
                 </div>
                              

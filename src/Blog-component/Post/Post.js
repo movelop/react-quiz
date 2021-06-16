@@ -63,8 +63,8 @@ import {Link} from 'react-router-dom';
                                     {/* post content */}
                                     <div className="content">
                                         <div className = "content-header has-text-centered">
-                                            <h3 className="title is-3"><strong>{this.state.post.title}</strong></h3>    
-                                            <h4 className="title is- is-spaced">{this.state.post.description}</h4>
+                                            <h3 className="title is-4"><strong>{this.state.post.title}</strong></h3>    
+                                            
                                             <h6 className="subtitle is-6">{this.renderDate(this.state.post.createdAt)}</h6>
 		                                    <hr/>
                                         </div>
