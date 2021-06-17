@@ -1,6 +1,5 @@
 {
   "name": "react-quiz",
-  "homepage": "https://movelop.github.io/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
